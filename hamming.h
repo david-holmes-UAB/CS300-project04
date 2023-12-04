@@ -8,6 +8,8 @@
 #ifndef _hamming_h
 #define _hamming_h
 
+#include <eigen3/Eigen/Dense>
+
 
 
 
