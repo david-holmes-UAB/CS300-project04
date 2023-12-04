@@ -71,9 +71,9 @@ void decodeHamming(const int (&bits)[7]) {
         /* TODO: hamming decoding */
         Eigen::MatrixXi decoded = decodingMatrix * hammingCode;
         data[0] = decoded(0, 0);
-        data[1] = decoded(0, 1);
-        data[2] = decoded(0, 2);
-        data[3] = decoded(0, 3);
+        data[1] = decoded(1, 0);
+        data[2] = decoded(2, 0);
+        data[3] = decoded(3, 0);
 
         for (int i : bitCopy) { std::cout << i; }
         std::cout << " decoded is: ";
@@ -98,8 +98,6 @@ void decodeHamming(const int (&bits)[7]) {
             /* TODO: hamming decoding */
         }
     }
-
-    std::cout << "Temporary message. (Debug)" << std::endl;
 }
 
 /* Fill matrix with the data from the array. */
@@ -129,7 +127,7 @@ int hasError(const Eigen::MatrixXi &hamMatrix) {
 
 /* Fixes an error at a given location in the hamming word matrix */
 Eigen::MatrixXi fixHammingWord(Eigen::MatrixXi hamMatrix, int location) {
-    hamMatrix[location] = (hamMatrix[location] + 1) %2;
+    hamMatrix(location, 0) = (hamMatrix(location, 0) + 1) %2;
     return hamMatrix;
 }
 
