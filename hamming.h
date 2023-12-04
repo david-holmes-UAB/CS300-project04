@@ -23,9 +23,10 @@ int hasError(const Eigen::MatrixXi &hamMatrix);
 
 /*! Fixes the error within the bits of the Hamming word, if needed.
 * @param hamMatrix An Eigen 1 x 7 int matrix containing the bits of the word.
+* @param location The location of the error within the matrix.
 * @return The fixed version of the input matrix.
 */
-Eigen::MatrixXi fixHammingWord(Eigen::MatrixXi hamMatrix);
+Eigen::MatrixXi fixHammingWord(Eigen::MatrixXi hamMatrix, int location);
 
 /*! Fills an Eigen 1 x 7 matrix to represent the Hammig word.
 * @param bits An int array containing the seven individual bits of the word.

@@ -46,7 +46,34 @@ void decodeHamming(const int (&bits)[7]) {
     int bitCopy[7];
     std::copy (bits, bits + 7, bitCopy);
 
+    /* 
+    * Get locataion of a prospective error in the code.
+    * If there is no error, this is -1
+    */
+    int errorLocation = hasError(hammingCode) - 1;
 
+    if (errorLocation == -1) {
+        /* TODO: hamming decoding */
+    }
+    else {
+        hammingCode = fixHammingWord(hammingCode, errorLocation);
+        bitCopy[errorLocation] = (bitCopy[errorLocation] == 0) ? 1 : 0;
+
+        /* Check for if there is another error */
+        errorLocation = hasError(hammingCode) - 1;
+        if (errorLocation != -1) {
+            std::cout << "Multiple error detected with input: ";
+            for (int i : bitCopy) {
+                std::cout << i;
+            }
+            std::cout << std::endl;
+        } 
+        else {
+            /* TODO: hamming decoding */
+        }
+    }
+
+    std::cout << "Temporary message. (Debug)" << std::endl;
 }
 
 /* Fill matrix with the data from the array. */
@@ -62,4 +89,14 @@ Eigen::MatrixXi fillMatrix(const int (&bits)[7]) {
     };
 
     return newMatrix;
+}
+
+/* Check to see if matrix has errors */
+int hasError(const Eigen::MatrixXi &hamMatrix) {
+    
+}
+
+/* Fixes an error at a given location in the hamming word matrix */
+Eigen::MatrixXi fixHammingWord(Eigen::MatrixXi hamMatrix, int location) {
+
 }
