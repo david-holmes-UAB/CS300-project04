@@ -60,6 +60,7 @@ void decodeHamming(const int (&bits)[7]) {
     /* local copy of the array */
     int bitCopy[7];
     std::copy (bits, bits + 7, bitCopy);
+
     /* 
     * Get locataion of a prospective error in the code.
     * If there is no error, this is -1
@@ -107,7 +108,12 @@ Eigen::MatrixXi fillMatrix(const int (&bits)[7]) {
 
 /* Check to see if matrix has errors */
 int hasError(const Eigen::MatrixXi &hamMatrix) {
-    
+   Eigen::Vector3<int> syndromeVector = parityMatrix * hamMatrix;
+   syndromeVector[0] %= 2;
+   syndromeVector[1] %= 2;
+   syndromeVector[2] %= 2;
+   if (syndromeVector.isZero()) return 0; 
+   return syndromeVector[0]+syndromeVector[1]<<1+syndromeVector[2]<<2;
 }
 
 /* Fixes an error at a given location in the hamming word matrix */
@@ -115,9 +121,3 @@ Eigen::MatrixXi fixHammingWord(Eigen::MatrixXi hamMatrix, int location) {
 
 }
 
-void printHamming(int bits[7]){
-    for (int i = 0; i < 7; i++){
-        std::cout<<bits[i];
-    }
-    std::cout << std::endl;
-}
