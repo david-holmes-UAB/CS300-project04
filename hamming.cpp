@@ -7,6 +7,7 @@
 #include "hamming.h"
 #include <eigen3/Eigen/Dense>
 #include <iostream>
+#include <algorithm>
 
 // Variables
 
@@ -37,7 +38,28 @@ int data[4];
 
 // Functions
 
-/* Attempt to decode and print results */
+/* Attempt to decode and print results. */
 void decodeHamming(const int (&bits)[7]) {
+    hammingCode = fillMatrix(bits);
 
+    /* local copy of the array */
+    int bitCopy[7];
+    std::copy (bits, bits + 7, bitCopy);
+
+
+}
+
+/* Fill matrix with the data from the array. */
+Eigen::MatrixXi fillMatrix(const int (&bits)[7]) {
+    Eigen::MatrixXi newMatrix {
+        {bits[0]},
+        {bits[1]},
+        {bits[2]},
+        {bits[3]},
+        {bits[4]},
+        {bits[5]},
+        {bits[6]}
+    };
+
+    return newMatrix;
 }
