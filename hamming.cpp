@@ -30,7 +30,7 @@ Eigen::MatrixXi decodingMatrix {
 };
 
 /* To store the matrix to do matrix multiplication */
-Eigen::MatrixXi hammingCode(1, 7);
+Eigen::MatrixXi hammingCode(7, 1);
 
 /* To store the final returned data */
 int data[4];
@@ -54,6 +54,17 @@ void decodeHamming(const int (&bits)[7]) {
 
     if (errorLocation == -1) {
         /* TODO: hamming decoding */
+        Eigen::MatrixXi decoded = decodingMatrix * hammingCode;
+        data[0] = decoded(0, 0);
+        data[1] = decoded(0, 1);
+        data[2] = decoded(0, 2);
+        data[3] = decoded(0, 3);
+
+        for (int i : bitCopy) { std::cout << i; }
+        std::cout << " decoded is: ";
+        for (int i : data) { std::cout << i; }
+        std::cout << std::endl;
+
     }
     else {
         hammingCode = fixHammingWord(hammingCode, errorLocation);
@@ -62,7 +73,7 @@ void decodeHamming(const int (&bits)[7]) {
         /* Check for if there is another error */
         errorLocation = hasError(hammingCode) - 1;
         if (errorLocation != -1) {
-            std::cout << "Multiple error detected with input: ";
+            std::cout << "Multiple errors detected with input: ";
             for (int i : bitCopy) {
                 std::cout << i;
             }
