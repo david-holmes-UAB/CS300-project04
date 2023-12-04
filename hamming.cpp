@@ -16,3 +16,14 @@ Eigen::MatrixXi parityMatrix {
     {0, 1, 1, 0, 0, 1, 1},
     {0, 0, 0, 1, 1, 1, 1}
 };
+
+/* Matrix to decode the Hamming word. */
+Eigen::MatrixXi decodingMatrix {
+    {0, 0, 1, 0, 0, 0, 0},
+    {0, 0, 0, 0, 1, 0, 0},
+    {0, 0, 0, 0, 0, 1, 0},
+    {0, 0, 0, 0, 0, 0, 1}
+};
+
+/* To store the matrix to do matrix multiplication */
+Eigen::MatrixXi hammingCode(1, 7);
