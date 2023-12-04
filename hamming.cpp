@@ -68,7 +68,7 @@ void decodeHamming(const int (&bits)[7]) {
     int errorLocation = hasError(hammingCode) - 1;
 
     if (errorLocation == -1) {
-        /* TODO: hamming decoding */
+        /* hamming decoding */
         Eigen::MatrixXi decoded = decodingMatrix * hammingCode;
         data[0] = decoded(0, 0);
         data[1] = decoded(1, 0);
@@ -95,7 +95,17 @@ void decodeHamming(const int (&bits)[7]) {
             std::cout << std::endl;
         } 
         else {
-            /* TODO: hamming decoding */
+            /* hamming decoding */
+            Eigen::MatrixXi decoded = decodingMatrix * hammingCode;
+            data[0] = decoded(0, 0);
+            data[1] = decoded(1, 0);
+            data[2] = decoded(2, 0);
+            data[3] = decoded(3, 0);
+
+            for (int i : bitCopy) { std::cout << i; }
+            std::cout << " has an error. After correction, the value once decoded is: ";
+            for (int i : data) { std::cout << i; }
+            std::cout << std::endl;
         }
     }
 }
