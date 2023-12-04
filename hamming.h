@@ -9,10 +9,9 @@
 #define _hamming_h
 
 #include <eigen3/Eigen/Dense>
-#include <iostream>
 
 /*! Decodes a Hamming word.
-* @param bits An int array containing the seven individual bits of the word
+* @param bits An int array containing the seven individual bits of the word.
 */
 void decodeHamming(const int (&bits)[7]);
 
@@ -27,6 +26,12 @@ int hasError(const Eigen::MatrixXi &hamMatrix);
 * @return The fixed version of the input matrix.
 */
 Eigen::MatrixXi fixHammingWord(Eigen::MatrixXi hamMatrix);
+
+/*! Fills an Eigen 1 x 7 matrix to represent the Hammig word.
+* @param bits An int array containing the seven individual bits of the word.
+* @return An Eigen 1 x 7 matrix filled using the contents of the array.
+*/
+Eigen::MatrixXi fillMatrix(const int (&bits)[7]);
 
 
 #endif

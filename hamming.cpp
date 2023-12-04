@@ -6,6 +6,9 @@
 
 #include "hamming.h"
 #include <eigen3/Eigen/Dense>
+#include <iostream>
+
+// Variables
 
 /* 
 * The parity matrix for decoding Hamming words. 
@@ -27,3 +30,14 @@ Eigen::MatrixXi decodingMatrix {
 
 /* To store the matrix to do matrix multiplication */
 Eigen::MatrixXi hammingCode(1, 7);
+
+/* To store the final returned data */
+int data[4];
+
+
+// Functions
+
+/* Attempt to decode and print results */
+void decodeHamming(const int (&bits)[7]) {
+
+}
