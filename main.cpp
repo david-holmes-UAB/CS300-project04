@@ -6,6 +6,7 @@
 
 #include "hamming.h"
 #include <fstream>
+#include <iostream>
 #include <string>
 
 int main() {
@@ -17,6 +18,17 @@ int main() {
 
     // File to be read in by the program
     std::ifstream file("hamwords.txt");
+    std::string line; 
+    while (getline(file,line)){
+    for (int i = 0; i < 7; i++){
+        
+        bits[i] = atoi(&line[i])%2;
+
+    }
+    decodeHamming(bits);
+    
+}
+
 
 
     return 0;

@@ -29,7 +29,22 @@ Eigen::MatrixXi decodingMatrix {
     {0, 0, 0, 0, 0, 0, 1}
 };
 
-/* To store the matrix to do matrix multiplication */
+/* To0000000
+1110000
+1001100
+0111100
+0101010decodeHamming(bits)
+1011010
+1100110
+0010110
+1101001
+0011001
+0100101
+1010101
+1000011
+0110011
+0001111
+1111111 store the matrix to do matrix multiplication */
 Eigen::MatrixXi hammingCode(7, 1);
 
 /* To store the final returned data */
@@ -104,10 +119,16 @@ Eigen::MatrixXi fillMatrix(const int (&bits)[7]) {
 
 /* Check to see if matrix has errors */
 int hasError(const Eigen::MatrixXi &hamMatrix) {
-    
+   Eigen::Vector3<int> syndromeVector = parityMatrix * hamMatrix;
+   syndromeVector[0] %= 2;
+   syndromeVector[1] %= 2;
+   syndromeVector[2] %= 2;
+   if (syndromeVector.isZero()) return 0; 
+   return syndromeVector[0]+syndromeVector[1]<<1+syndromeVector[2]<<2;
 }
 
 /* Fixes an error at a given location in the hamming word matrix */
 Eigen::MatrixXi fixHammingWord(Eigen::MatrixXi hamMatrix, int location) {
 
 }
+
