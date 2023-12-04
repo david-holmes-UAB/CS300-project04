@@ -33,9 +33,6 @@ Eigen::MatrixXi fixHammingWord(Eigen::MatrixXi hamMatrix, int location);
 * @return An Eigen 1 x 7 matrix filled using the contents of the array.
 */
 Eigen::MatrixXi fillMatrix(const int (&bits)[7]);
-/*! Prints the given Hamming word out to cout
-*  @param bits length 7 int array containing a Hamming word
-*/
-void printHamming (int bits[7]);
+
 
 #endif
