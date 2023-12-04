@@ -29,7 +29,22 @@ Eigen::MatrixXi decodingMatrix {
     {0, 0, 0, 0, 0, 0, 1}
 };
 
-/* To store the matrix to do matrix multiplication */
+/* To0000000
+1110000
+1001100
+0111100
+0101010
+1011010
+1100110
+0010110
+1101001
+0011001
+0100101
+1010101
+1000011
+0110011
+0001111
+1111111 store the matrix to do matrix multiplication */
 Eigen::MatrixXi hammingCode(1, 7);
 
 /* To store the final returned data */
@@ -62,4 +77,11 @@ Eigen::MatrixXi fillMatrix(const int (&bits)[7]) {
     };
 
     return newMatrix;
+}
+
+void printHamming(int bits[7]){
+    for (int i = 0; i < 7; i++){
+        std::cout<<bits[i];
+    }
+    std::cout << std::endl;
 }
