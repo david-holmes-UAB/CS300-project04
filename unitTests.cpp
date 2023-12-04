@@ -15,6 +15,7 @@ int main(){
         {0}
     };
     assert(("fillMatrix 1", fillMatrix(bits) == fillTest ));
+    assert(("hasError 1 error test", hasError(fillTest)));
 
-
+    std::cout << "all tests successful\n";
 }
