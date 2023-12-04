@@ -34,5 +34,10 @@ Eigen::MatrixXi fixHammingWord(Eigen::MatrixXi hamMatrix, int location);
 */
 Eigen::MatrixXi fillMatrix(const int (&bits)[7]);
 
+/*! Prints out a 4 bit value using the digits from a dedicated internal array.
+* @param bitData A 4 length integer array that together forms a represenation of a 4 bit value.
+*/
+void printData(const int (&bitData)[4]);
+
 
 #endif
