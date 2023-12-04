@@ -33,7 +33,7 @@ Eigen::MatrixXi decodingMatrix {
 1110000
 1001100
 0111100
-0101010
+0101010decodeHamming(bits)
 1011010
 1100110
 0010110
@@ -60,7 +60,6 @@ void decodeHamming(const int (&bits)[7]) {
     /* local copy of the array */
     int bitCopy[7];
     std::copy (bits, bits + 7, bitCopy);
-
     /* 
     * Get locataion of a prospective error in the code.
     * If there is no error, this is -1

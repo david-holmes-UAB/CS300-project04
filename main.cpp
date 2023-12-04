@@ -26,7 +26,6 @@ int main() {
 
     }
     decodeHamming(bits);
-    printHamming(bits);
     
 }
 
