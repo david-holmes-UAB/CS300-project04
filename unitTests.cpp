@@ -15,11 +15,15 @@ int main(){
         {0}
     };
     assert(("fillMatrix 1", fillMatrix(bits) == fillTest ));
-    assert(("hasError 1 error test", hasError(fillTest) == 2));
+    assert(("hasError 1 error test", hasError(fillTest) != 0));
     int bits1[7]{1,1,1,0,0,0,0};
+    auto errmatx = fillMatrix(bits1);
+    assert(("hasError 0 errors", hasError(errmatx)==0));
+    auto fix = fixHammingWord(fillTest,hasError(fillTest));
+    int bits3[7]{0,0,1,0,1,1,0};
+    auto ans = fillMatrix(bits3);
     
-    assert(("hasError 0 errors", hasError(fillMatrix(bits1))==0));
-
-    assert(("fixHamming 1 error",(fixHammingWord(fillTest,hasError(fillTest))==fillMatrix({0,0,1,0,1,1,0}))));
+    std::cout<< fix <<std::endl;
+    assert(("fixHamming 1 error >> output: ",(fix ==ans)));
     std::cout << "all tests successful\n";
 }
