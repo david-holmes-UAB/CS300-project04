@@ -48,12 +48,12 @@ int main(){
     // test 3
     int errorInput[7] = {1, 1, 1, 0, 1, 0, 1};                  // encoded 1101 as 1010101; with error on 2nd bit
     Eigen::MatrixXi errorMatrix = fillMatrix(errorInput);
-    assert(("hasError test 3; Input: 1110101; error on 2nd bit", hasError(errorMatrix)  == 2));
+    assert(("hasError test 3; Input: 1110101; error on 2nd bit", hasError(errorMatrix) == 2));
 
     // test 4  
     int errorInput2[7] = {0, 0, 1, 1, 1, 0, 1};                  // encoded 1001 as 0011001; with error on 5th bit
-    errorMatrix = fillMatrix(errorInput2);
-    assert(("hasError test 3; Input: 1110101; error on 2nd bit", hasError(errorMatrix) == 5));
+    Eigen::MatrixXi errorMatrix2 = fillMatrix(errorInput2);
+    assert(("hasError test 3; Input: 1110101; error on 2nd bit", hasError(errorMatrix2) == 5));
 
     /* fixHamming tests */
 
@@ -82,10 +82,14 @@ int main(){
     {0, 0, 0, 0, 0, 1, 0},
     {0, 0, 0, 0, 0, 0, 1}
     };
+    /* wip test; fails to run here
+    Eigen::MatrixXi prodMatrix;
+
     if (hasError(sixMatrix) == 0) {
-        decoder *= sixMatrix;
+        prodMatrix = sixMatrix * decoder;
     }
-    int testData[4] = {decoder(0, 0), decoder(1, 0), decoder(2, 0), decoder(3, 0)};
+    */
+    int testData[4] = {prodMatrix(0, 0), prodMatrix(1, 0), prodMatrix(2, 0), prodMatrix(3, 0)};
     assert(("getData test 1; Input: 1100110; Expected output: 0110", getData(testData) == std::string("0110")));
 
 
