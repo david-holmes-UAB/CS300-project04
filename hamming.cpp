@@ -135,7 +135,7 @@ int hasError(const Eigen::MatrixXi &hamMatrix) {
 
 /* Fixes an error at a given location in the hamming word matrix */
 Eigen::MatrixXi fixHammingWord(Eigen::MatrixXi hamMatrix, int location) {
-    hamMatrix(location) = (hamMatrix(location) + 1) %2;
+    hamMatrix(location,0) = (hamMatrix(location,0) + 1) %2;
     return hamMatrix;
 }
 

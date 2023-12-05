@@ -19,11 +19,13 @@ int main(){
     int bits1[7]{1,1,1,0,0,0,0};
     auto errmatx = fillMatrix(bits1);
     assert(("hasError 0 errors", hasError(errmatx)==0));
+    fillTest = fillMatrix({0,1,0,1,1,1,1});
     auto fix = fixHammingWord(fillTest,hasError(fillTest));
-    int bits3[7]{0,0,1,0,1,1,0};
+    int bits3[7]{0,0,0,1,1,1,1};
     auto ans = fillMatrix(bits3);
     
     std::cout<< fix <<std::endl;
+    std::cout << "\n \n";
     std::cout<<ans;
     std::cout <<"\n\n\n";
     std::cout.flush();
