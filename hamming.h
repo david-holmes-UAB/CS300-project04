@@ -11,6 +11,7 @@
 #define _hamming_h
 
 #include <eigen3/Eigen/Dense>
+#include <string>
 
 //! Decodes a Hamming word.
 /*! Goes through the process of decoding a Hamming word defined by the contents of @param bits.
@@ -40,10 +41,11 @@ Eigen::MatrixXi fixHammingWord(Eigen::MatrixXi hamMatrix, int location);
 */
 Eigen::MatrixXi fillMatrix(const int (&bits)[7]);
 
-/*! Prints out a 4 bit value using the digits from a dedicated internal array.
+/*! Returns a string representing a 4 bit value using the digits from a dedicated internal array.
 * @param bitData A 4 length integer array that together forms a represenation of a 4 bit value.
+* @return A string constructed from the contents of the bit array.
 */
-void printData(const int (&bitData)[4]);
+std::string getData(const int (&bitData)[4]);
 
 /*! \mainpage notitle
 *

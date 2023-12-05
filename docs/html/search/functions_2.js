@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['haserror_0',['hasError',['../hamming_8h.html#a4b2d2c5049eb8db5063d758ddb95a513',1,'hamming.h']]]
+  ['getdata_0',['getData',['../hamming_8h.html#a1d7b08714efefafe20097129edc1251b',1,'hamming.h']]]
 ];

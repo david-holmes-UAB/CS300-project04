@@ -92,25 +92,26 @@ $(function() { codefold.init(0); });
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#define _hamming_h</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;eigen3/Eigen/Dense&gt;</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="hamming_8h.html#a0c8adb1203b6e0bfb0b757537b284d64">   19</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="hamming_8h.html#a0c8adb1203b6e0bfb0b757537b284d64">decodeHamming</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> (&amp;bits)[7]);</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="hamming_8h.html#a4b2d2c5049eb8db5063d758ddb95a513">   26</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="hamming_8h.html#a4b2d2c5049eb8db5063d758ddb95a513">hasError</a>(<span class="keyword">const</span> Eigen::MatrixXi &amp;hamMatrix);</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="hamming_8h.html#ac345e5acbe42394cc277ec3802514980">   34</a></span>Eigen::MatrixXi <a class="code hl_function" href="hamming_8h.html#ac345e5acbe42394cc277ec3802514980">fixHammingWord</a>(Eigen::MatrixXi hamMatrix, <span class="keywordtype">int</span> location);</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="hamming_8h.html#ab0ac94b49194c9662f58e9ce9d7980ad">   41</a></span>Eigen::MatrixXi <a class="code hl_function" href="hamming_8h.html#ab0ac94b49194c9662f58e9ce9d7980ad">fillMatrix</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> (&amp;bits)[7]);</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="hamming_8h.html#a9fab4595d7c21fb04550c83b3f8b72f0">   46</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="hamming_8h.html#a9fab4595d7c21fb04550c83b3f8b72f0">printData</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> (&amp;bitData)[4]);</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="hamming_8h.html#a0c8adb1203b6e0bfb0b757537b284d64">   20</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="hamming_8h.html#a0c8adb1203b6e0bfb0b757537b284d64">decodeHamming</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> (&amp;bits)[7]);</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="hamming_8h.html#a4b2d2c5049eb8db5063d758ddb95a513">   27</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="hamming_8h.html#a4b2d2c5049eb8db5063d758ddb95a513">hasError</a>(<span class="keyword">const</span> Eigen::MatrixXi &amp;hamMatrix);</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="hamming_8h.html#ac345e5acbe42394cc277ec3802514980">   35</a></span>Eigen::MatrixXi <a class="code hl_function" href="hamming_8h.html#ac345e5acbe42394cc277ec3802514980">fixHammingWord</a>(Eigen::MatrixXi hamMatrix, <span class="keywordtype">int</span> location);</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="hamming_8h.html#ab0ac94b49194c9662f58e9ce9d7980ad">   42</a></span>Eigen::MatrixXi <a class="code hl_function" href="hamming_8h.html#ab0ac94b49194c9662f58e9ce9d7980ad">fillMatrix</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> (&amp;bits)[7]);</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="hamming_8h.html#a1d7b08714efefafe20097129edc1251b">   48</a></span>std::string <a class="code hl_function" href="hamming_8h.html#a1d7b08714efefafe20097129edc1251b">getData</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> (&amp;bitData)[4]);</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="ahamming_8h_html_a0c8adb1203b6e0bfb0b757537b284d64"><div class="ttname"><a href="hamming_8h.html#a0c8adb1203b6e0bfb0b757537b284d64">decodeHamming</a></div><div class="ttdeci">void decodeHamming(const int(&amp;bits)[7])</div><div class="ttdoc">Decodes a Hamming word.</div></div>
+<div class="ttc" id="ahamming_8h_html_a1d7b08714efefafe20097129edc1251b"><div class="ttname"><a href="hamming_8h.html#a1d7b08714efefafe20097129edc1251b">getData</a></div><div class="ttdeci">std::string getData(const int(&amp;bitData)[4])</div></div>
 <div class="ttc" id="ahamming_8h_html_a4b2d2c5049eb8db5063d758ddb95a513"><div class="ttname"><a href="hamming_8h.html#a4b2d2c5049eb8db5063d758ddb95a513">hasError</a></div><div class="ttdeci">int hasError(const Eigen::MatrixXi &amp;hamMatrix)</div><div class="ttdoc">Checks if an error is in the Hamming word.</div></div>
-<div class="ttc" id="ahamming_8h_html_a9fab4595d7c21fb04550c83b3f8b72f0"><div class="ttname"><a href="hamming_8h.html#a9fab4595d7c21fb04550c83b3f8b72f0">printData</a></div><div class="ttdeci">void printData(const int(&amp;bitData)[4])</div></div>
 <div class="ttc" id="ahamming_8h_html_ab0ac94b49194c9662f58e9ce9d7980ad"><div class="ttname"><a href="hamming_8h.html#ab0ac94b49194c9662f58e9ce9d7980ad">fillMatrix</a></div><div class="ttdeci">Eigen::MatrixXi fillMatrix(const int(&amp;bits)[7])</div><div class="ttdoc">Converts a Hamming word into a matrix.</div></div>
 <div class="ttc" id="ahamming_8h_html_ac345e5acbe42394cc277ec3802514980"><div class="ttname"><a href="hamming_8h.html#ac345e5acbe42394cc277ec3802514980">fixHammingWord</a></div><div class="ttdeci">Eigen::MatrixXi fixHammingWord(Eigen::MatrixXi hamMatrix, int location)</div><div class="ttdoc">Corrects errors in a Hamming word.</div></div>
 </div><!-- fragment --></div><!-- contents -->

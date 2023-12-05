@@ -77,7 +77,7 @@ void decodeHamming(const int (&bits)[7]) {
 
         for (int i : bitCopy) { std::cout << i; }
         std::cout << " decoded is: ";
-        printData(data);
+        std::cout << getData(data) << std::endl;
 
     }
     else {
@@ -103,7 +103,7 @@ void decodeHamming(const int (&bits)[7]) {
 
             for (int i : bitCopy) { std::cout << i; }
             std::cout << " has an error. After correction, the value once decoded is: ";
-            printData(data);
+            std::cout << getData(data) << std::endl;
         }
     }
 }
@@ -140,8 +140,9 @@ Eigen::MatrixXi fixHammingWord(Eigen::MatrixXi hamMatrix, int location) {
 }
 
 /* Print the data array. Very simple, done for ease of testing and delegation. */
-void printData(const int (&bitData)[4]) {
-    for (int i : bitData) { std::cout << i;}
-    std::cout << std::endl;
+std::string getData(const int (&bitData)[4]) {
+    std::string decodedData = "";
+    for (int i : bitData) { decodedData += (char(i + '0'));}
+    return decodedData;
 }
 
