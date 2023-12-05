@@ -130,7 +130,7 @@ int hasError(const Eigen::MatrixXi &hamMatrix) {
    syndromeVector[1] %= 2;
    syndromeVector[2] %= 2;
    if (syndromeVector.isZero()) return 0; 
-   return syndromeVector[0]+syndromeVector[1]<<1+syndromeVector[2]<<2;
+   return syndromeVector[0]+(syndromeVector[1]<<1)+(syndromeVector[2]<<2);
 }
 
 /* Fixes an error at a given location in the hamming word matrix */
