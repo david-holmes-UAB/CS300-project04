@@ -133,6 +133,8 @@ int hasError(const Eigen::MatrixXi &hamMatrix) {
    return syndromeVector[0]+(syndromeVector[1]<<1)+(syndromeVector[2]<<2);
 }
 
+
+
 /* Fixes an error at a given location in the hamming word matrix */
 Eigen::MatrixXi fixHammingWord(Eigen::MatrixXi hamMatrix, int location) {
     hamMatrix(location) = ((hamMatrix(location)+1)%2) ;
