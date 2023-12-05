@@ -1,6 +1,7 @@
 \doxysection{hamming.\+h File Reference}
 \hypertarget{hamming_8h}{}\label{hamming_8h}\index{hamming.h@{hamming.h}}
 {\ttfamily \#include $<$eigen3/\+Eigen/\+Dense$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -12,7 +13,7 @@ Eigen\+::\+Matrix\+Xi \mbox{\hyperlink{hamming_8h_ac345e5acbe42394cc277ec3802514
 \begin{DoxyCompactList}\small\item\em Corrects errors in a Hamming word. \end{DoxyCompactList}\item 
 Eigen\+::\+Matrix\+Xi \mbox{\hyperlink{hamming_8h_ab0ac94b49194c9662f58e9ce9d7980ad}{fill\+Matrix}} (const int(\&bits)\mbox{[}7\mbox{]})
 \begin{DoxyCompactList}\small\item\em Converts a Hamming word into a matrix. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{hamming_8h_a9fab4595d7c21fb04550c83b3f8b72f0}{print\+Data}} (const int(\&bit\+Data)\mbox{[}4\mbox{]})
+std\+::string \mbox{\hyperlink{hamming_8h_a1d7b08714efefafe20097129edc1251b}{get\+Data}} (const int(\&bit\+Data)\mbox{[}4\mbox{]})
 \end{DoxyCompactItemize}
 
 
@@ -72,6 +73,20 @@ Fixes the error within the bits of the Hamming word if needed by changing the bi
 \begin{DoxyReturn}{Returns}
 The fixed version of the input matrix. 
 \end{DoxyReturn}
+\Hypertarget{hamming_8h_a1d7b08714efefafe20097129edc1251b}\label{hamming_8h_a1d7b08714efefafe20097129edc1251b} 
+\index{hamming.h@{hamming.h}!getData@{getData}}
+\index{getData@{getData}!hamming.h@{hamming.h}}
+\doxysubsubsection{\texorpdfstring{getData()}{getData()}}
+{\footnotesize\ttfamily std\+::string get\+Data (\begin{DoxyParamCaption}\item[{const int(\&)}]{bit\+Data\mbox{[}4\mbox{]} }\end{DoxyParamCaption})}
+
+Returns a string representing a 4 bit value using the digits from a dedicated internal array. 
+\begin{DoxyParams}{Parameters}
+{\em bit\+Data} & A 4 length integer array that together forms a represenation of a 4 bit value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A string constructed from the contents of the bit array. 
+\end{DoxyReturn}
 \Hypertarget{hamming_8h_a4b2d2c5049eb8db5063d758ddb95a513}\label{hamming_8h_a4b2d2c5049eb8db5063d758ddb95a513} 
 \index{hamming.h@{hamming.h}!hasError@{hasError}}
 \index{hasError@{hasError}!hamming.h@{hamming.h}}
@@ -90,14 +105,3 @@ Checks the matrix representation of a Hamming word to see if an error is found i
 \begin{DoxyReturn}{Returns}
 The position in the matrix the error is at, if any. Returns 0 if there is no error. 
 \end{DoxyReturn}
-\Hypertarget{hamming_8h_a9fab4595d7c21fb04550c83b3f8b72f0}\label{hamming_8h_a9fab4595d7c21fb04550c83b3f8b72f0} 
-\index{hamming.h@{hamming.h}!printData@{printData}}
-\index{printData@{printData}!hamming.h@{hamming.h}}
-\doxysubsubsection{\texorpdfstring{printData()}{printData()}}
-{\footnotesize\ttfamily void print\+Data (\begin{DoxyParamCaption}\item[{const int(\&)}]{bit\+Data\mbox{[}4\mbox{]} }\end{DoxyParamCaption})}
-
-Prints out a 4 bit value using the digits from a dedicated internal array. 
-\begin{DoxyParams}{Parameters}
-{\em bit\+Data} & A 4 length integer array that together forms a represenation of a 4 bit value. \\
-\hline
-\end{DoxyParams}

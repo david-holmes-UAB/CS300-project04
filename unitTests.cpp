@@ -3,7 +3,7 @@
 #include <eigen3/Eigen/Dense>
 #include "hamming.h"
 int main(){
-    // FillMatrix test
+    // FillMatrix tests
     int bits[7]{0,1,1,0,1,1,0};
     Eigen::MatrixXi fillTest {
         {0},
