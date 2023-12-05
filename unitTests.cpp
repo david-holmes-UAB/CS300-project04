@@ -7,7 +7,7 @@
 int main(){
     /* Assorted test variables */
     int binarySix[7] {1, 1, 0, 0, 1, 1, 0};           // encoded 0110 as 1100110
-
+    int zeroes[7] {0,0,0,0,0,0,0};
     /* FillMatrix tests */
     // test 1
     int bits[7]{0,1,1,0,1,1,0};
@@ -32,7 +32,18 @@ int main(){
         {1},
         {0}
     };
-    assert(("fillMatrix test 2; Input: 1100110", fillMatrix(binarySix) == binarySixMatrix));    
+    assert(("fillMatrix test 2; Input: 1100110", fillMatrix(binarySix) == binarySixMatrix));  
+    // test 3
+        Eigen::MatrixXi zeroMatrix {
+        {0},
+        {0},
+        {0},
+        {0},
+        {0},
+        {0},
+        {0}
+    };
+    assert(("fillMatrix test 3; Input: 0000000", fillMatrix(zeroes) == zeroMatrix));    
 
 
     /* hasError tests */
