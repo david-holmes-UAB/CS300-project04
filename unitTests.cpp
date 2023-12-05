@@ -92,7 +92,20 @@ int main(){
     int testData[4] = {prodMatrix(0, 0), prodMatrix(1, 0), prodMatrix(2, 0), prodMatrix(3, 0)};
     assert(("getData test 1; Input: 1100110; Expected output: 0110", getData(testData) == std::string("0110")));
 
+    Eigen::MatrixXi fulltest2 = fillMatrix({0,0,0,0,1,1,1});
 
+    if (hasError(fulltest2) == 0){
+        prodMatrix = decoder * fulltest2;
+        std::cout << "this shouldn't be here\n";
+    }else{
+    
+        prodMatrix = decoder * fixHammingWord(fulltest2,hasError(fulltest2)-1);
+        
+    }
+
+    int testData2[4] ={prodMatrix(0, 0), prodMatrix(1, 0), prodMatrix(2, 0), prodMatrix(3, 0)};
+
+    assert(("getData test 2; Input: 0000111; Expected output: 0111", getData(testData2) == std::string("0111")));
     std::cout << "all tests successful\n";
 
 
