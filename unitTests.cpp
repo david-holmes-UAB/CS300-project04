@@ -92,6 +92,7 @@ int main(){
     int testData[4] = {prodMatrix(0, 0), prodMatrix(1, 0), prodMatrix(2, 0), prodMatrix(3, 0)};
     assert(("getData test 1; Input: 1100110; Expected output: 0110", getData(testData) == std::string("0110")));
 
+    // test 2
     Eigen::MatrixXi fulltest2 = fillMatrix({0,0,0,0,1,1,1});
 
     if (hasError(fulltest2) == 0){
