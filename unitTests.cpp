@@ -24,6 +24,9 @@ int main(){
     auto ans = fillMatrix(bits3);
     
     std::cout<< fix <<std::endl;
+    std::cout<<ans;
+    std::cout <<"\n\n\n";
+    std::cout.flush();
     assert(("fixHamming 1 error >> output: ",(fix ==ans)));
     std::cout << "all tests successful\n";
 }
