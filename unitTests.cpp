@@ -20,15 +20,14 @@ int main(){
     auto errmatx = fillMatrix(bits1);
     assert(("hasError 0 errors", hasError(errmatx)==0));
     fillTest = fillMatrix({0,1,0,1,1,1,1});
-    auto fix = fixHammingWord(fillTest,hasError(fillTest));
+    auto fix = fixHammingWord(fillTest,hasError(fillTest)-1);
     int bits3[7]{0,0,0,1,1,1,1};
     auto ans = fillMatrix(bits3);
     
-    std::cout<< fix <<std::endl;
-    std::cout << "\n \n";
-    std::cout<<ans;
-    std::cout <<"\n\n\n";
-    std::cout.flush();
     assert(("fixHamming 1 error >> output: ",(fix ==ans)));
+
+
     std::cout << "all tests successful\n";
+
+
 }
